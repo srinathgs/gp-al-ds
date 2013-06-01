@@ -201,8 +201,10 @@ protected:
         else if(node->_key < val) node->_right = hDel(node->_right,val);
         else{
             if(node->_left != 0 && node->_right!=0){
-            node->_key = getMinHelper(node->_right)->_key;
-            deleteMin(node->_right);
+                TNode<Key>* tmp = node;
+                node = getMinHelper(node->_right);
+                node->_right = deleteMin(node->_right);
+                node->_left = tmp->_left;
             }
             else if(node->_left == 0) {
                 TNode<Key>* x = node->_right;
@@ -221,20 +223,19 @@ protected:
         return node;
     }
 
-    void deleteMin(TNode<Key>*& node){
+    TNode<Key>* deleteMin(TNode<Key>*& node){
         if(node == 0){
-            return;
+            return 0;
         }
         else if(node->_left !=0){
 
-        deleteMin(node->_left);
+        node->_left = deleteMin(node->_left);
         }
-        else{
-            TNode<Key>* tmp = node;
-            node = node->_right;
-            tmp->_right = 0;
-            delete tmp;
-        }
+        TNode<Key>* tmp = node;
+        node = node->_right;
+        tmp->_right = 0;
+        delete tmp;
+        return node;
 
     }
     void inOrderMorris(TNode<Key>* rt){
