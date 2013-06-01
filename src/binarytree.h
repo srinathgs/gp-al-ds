@@ -195,7 +195,7 @@ protected:
 
     }
 
-    TNode<Key>* hDel(TNode<Key>* node, Key val){
+    TNode<Key>* hDel(TNode<Key>*& node, Key val){
         if(node == 0) return 0;
         if(node->_key > val) node->_left = hDel(node->_left,val);
         else if(node->_key < val) node->_right = hDel(node->_right,val);
@@ -205,6 +205,9 @@ protected:
                 node = getMinHelper(node->_right);
                 node->_right = deleteMin(node->_right);
                 node->_left = tmp->_left;
+                tmp->_left = 0;
+                tmp->_right = 0;
+                delete tmp;
             }
             else if(node->_left == 0) {
                 TNode<Key>* x = node->_right;
