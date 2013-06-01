@@ -35,5 +35,5 @@ Contribution
 Simple.
  * Fork
  * Edit
- * Give a pull request with appropriate explanation.
+ * Pull Request.
     
