@@ -5,6 +5,8 @@ This is a collection of Data Structures and Algorithms which are intended for co
 
 Most of the code is implemented based on the classic text Introduction to Algorithms by Carmen, Leiserson, Rivest and Stein. 
 
+--------------
+
 Copying
 ====
 The MIT License (MIT)
@@ -30,10 +32,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 <br/>
 <img src="http://opensource.org/files/osi_symbol.png" width = "50px"/>
+----------------
 Contribution
 ===
-Simple.
+>Simple.
  * Fork
  * Edit
  * Pull Request
+-------
     
