@@ -1,4 +1,4 @@
-Genral Purpose Data Structures and Algorithms
+Genral Purpose Algorithms and Data Structures
 ====
 
 This is a collection of Data Structures and Algorithms which are intended for coders who would want to learn about the implementations of most common and efficient data structures.
@@ -11,5 +11,8 @@ Copying
 
 Contribution
 ===
-    Give a pull request with appropriate explanation.
+Simple.
+ * Fork
+ * Edit
+ * Give a pull request with appropriate explanation.
     
