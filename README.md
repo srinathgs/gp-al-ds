@@ -1,7 +1,7 @@
 Genral Purpose Algorithms and Data Structures
 ====
 
-This is a collection of Data Structures and Algorithms which are intended for coders who would want to learn about the implementations of most common and efficient data structures.
+This is a collection of Data Structures and Algorithms which are intended for coders and hackers who would want to learn about the implementations of most common and efficient data structures.
 
 Most of the code is implemented based on the classic text Introduction to Algorithms by Carmen, Leiserson, Rivest and Stein. 
 
