@@ -26,7 +26,6 @@ THE SOFTWARE.
 #include "sort.hpp"
 #include<vector>
 
-#include <iostream>
 namespace RS{
 template<class T>
 class QuickSort:public Sort<T>{
