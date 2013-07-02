@@ -33,17 +33,21 @@ class QuickSort:public Sort<T>{
 private:
     typedef Sort<T> _parent;
     typedef std::vector<T> VT;
-    unsigned int partition(VT &a,unsigned int low,unsigned int high){
-        T piv = a[high];
-        unsigned int i = low - 1 ;
-        for(unsigned int j = low; j < high; j++){
-            if(less(a[j],piv) > 0){
-                i++;
-                swap(a[i],a[j]);
-            }
+    unsigned int partition(VT &a, int low,int high){
+        T piv = a[low];
+        int i = low;
+        int j = high + 1;
+        while(1){
+            while(less(a[i++],piv) > 0)
+                if(i == high) break;
+            while(less(piv,a[j--]) > 0)
+                if( j == low) break;
+            if(i >= j) break;
+            swap(a[i],a[j]);
         }
-        swap(a[i + 1],a[high]);
-        return i + 1;
+        swap(a[low],a[j]);
+        return j;
+
     }
     void sort(VT &a,int low,int high){
         if(low < high){
