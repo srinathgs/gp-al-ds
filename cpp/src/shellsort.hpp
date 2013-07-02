@@ -24,7 +24,6 @@ THE SOFTWARE.
 #define SHELLSORT_HPP
 #include "sort.hpp"
 #include <vector>
-#include <iostream>
 namespace RS{
 template<class T>
 class ShellSort:public Sort<T>{
@@ -35,7 +34,6 @@ public:
     void sort(VT &a){
         unsigned int N = a.size();
         for(unsigned int gap = N/2; gap > 0; gap = (gap==2?1:gap/2.2)){
-            std::cout<<gap<<std::endl;
             for(unsigned int i = gap; i < N; i+=gap){
                 T tmp = a[i];
                 unsigned int j = i;
