@@ -20,27 +20,30 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
-#ifndef INSERTIONSORT_HPP
-#define INSERTIONSORT_HPP
+#ifndef SELECTIONSORT_HPP
+#define SELECTIONSORT_HPP
 #include "sort.hpp"
 #include <vector>
-namespace RS {
+namespace RS{
 template<class T>
-class InsertionSort:public Sort<T>{
+class SelectionSort:public Sort<T>{
 private:
-    typedef Sort<T> _parent;
     typedef std::vector<T> VT;
+    typedef Sort<T> _parent;
 public:
-    InsertionSort(){_parent();}
     void sort(VT &a){
         int N = a.size();
-        for(int i = 0; i < N; i++){
-            for(int j = i; j > 0 && (less(a[j],a[j-1]) > 0) ; j--){
-                swap(a[j],a[j-1]);
+        for(unsigned int i = 0; i < N; i++){
+            int min = i;
+            for(unsigned int j = i + 1; j < N; j++){
+                if(less(a[j],a[min]) > 0) {
+                    min = j;
+                }
             }
+            swap(a[i],a[min]);
         }
     }
 };
-
 }
-#endif // INSERTIONSORT_HPP
+
+#endif // SELECTIONSORT_HPP
