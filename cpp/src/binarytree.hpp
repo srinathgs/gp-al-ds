@@ -210,16 +210,16 @@ protected:
                 delete tmp;
             }
             else if(node->_left == 0) {
-                TNode<Key>* x = node->_right;
-                node->_right = 0;
-                delete node;
-                return x;
+                TNode<Key>* x = node;
+                node = node->_right;
+                x->_right = 0;
+                delete x;
             }
             else if(node->_right == 0){
-                TNode<Key>* x = node->_left;
-                node->_left = 0;
-                delete node;
-                return x;
+                TNode<Key>* x = node;
+                node = node->_left;
+                x ->_left = 0;
+                delete x;
             }
 
         }
